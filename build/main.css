@@ -5759,10 +5759,6 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea:-ms-input-placeholder {
-  padding-left: 2px;
-}
-
 textarea::-ms-input-placeholder {
   padding-left: 2px;
 }
@@ -5927,7 +5923,7 @@ ion-input :focus {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -21378,23 +21374,23 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-coverflow .swiper-wrapper,
@@ -31418,7 +31414,6 @@ ion-navbar.toolbar {
 }
 
 .bs {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -32809,7 +32804,7 @@ ion-navbar.toolbar {
 
 .bs html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .bs body {
@@ -34531,28 +34526,50 @@ fieldset[disabled] .bs .form-control {
   .bs input[type="month"].form-control {
     line-height: 34px;
   }
-  .bs input[type="date"].input-sm, .bs .input-group-sm > input[type="date"].form-control, .bs .input-group-sm > input[type="date"].input-group-addon, .bs .input-group-sm > .input-group-btn > input[type="date"].btn,
+  .bs input[type="date"].input-sm, .bs .input-group-sm > input.form-control[type="date"],
+  .bs .input-group-sm > input.input-group-addon[type="date"],
+  .bs .input-group-sm > .input-group-btn > input.btn[type="date"],
   .input-group-sm .bs input[type="date"],
-  .bs input[type="time"].input-sm, .bs .input-group-sm > input[type="time"].form-control, .bs .input-group-sm > input[type="time"].input-group-addon, .bs .input-group-sm > .input-group-btn > input[type="time"].btn,
+  .bs input[type="time"].input-sm,
+  .bs .input-group-sm > input.form-control[type="time"],
+  .bs .input-group-sm > input.input-group-addon[type="time"],
+  .bs .input-group-sm > .input-group-btn > input.btn[type="time"],
   .input-group-sm
   .bs input[type="time"],
-  .bs input[type="datetime-local"].input-sm, .bs .input-group-sm > input[type="datetime-local"].form-control, .bs .input-group-sm > input[type="datetime-local"].input-group-addon, .bs .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
+  .bs input[type="datetime-local"].input-sm,
+  .bs .input-group-sm > input.form-control[type="datetime-local"],
+  .bs .input-group-sm > input.input-group-addon[type="datetime-local"],
+  .bs .input-group-sm > .input-group-btn > input.btn[type="datetime-local"],
   .input-group-sm
   .bs input[type="datetime-local"],
-  .bs input[type="month"].input-sm, .bs .input-group-sm > input[type="month"].form-control, .bs .input-group-sm > input[type="month"].input-group-addon, .bs .input-group-sm > .input-group-btn > input[type="month"].btn,
+  .bs input[type="month"].input-sm,
+  .bs .input-group-sm > input.form-control[type="month"],
+  .bs .input-group-sm > input.input-group-addon[type="month"],
+  .bs .input-group-sm > .input-group-btn > input.btn[type="month"],
   .input-group-sm
   .bs input[type="month"] {
     line-height: 30px;
   }
-  .bs input[type="date"].input-lg, .bs .input-group-lg > input[type="date"].form-control, .bs .input-group-lg > input[type="date"].input-group-addon, .bs .input-group-lg > .input-group-btn > input[type="date"].btn,
+  .bs input[type="date"].input-lg, .bs .input-group-lg > input.form-control[type="date"],
+  .bs .input-group-lg > input.input-group-addon[type="date"],
+  .bs .input-group-lg > .input-group-btn > input.btn[type="date"],
   .input-group-lg .bs input[type="date"],
-  .bs input[type="time"].input-lg, .bs .input-group-lg > input[type="time"].form-control, .bs .input-group-lg > input[type="time"].input-group-addon, .bs .input-group-lg > .input-group-btn > input[type="time"].btn,
+  .bs input[type="time"].input-lg,
+  .bs .input-group-lg > input.form-control[type="time"],
+  .bs .input-group-lg > input.input-group-addon[type="time"],
+  .bs .input-group-lg > .input-group-btn > input.btn[type="time"],
   .input-group-lg
   .bs input[type="time"],
-  .bs input[type="datetime-local"].input-lg, .bs .input-group-lg > input[type="datetime-local"].form-control, .bs .input-group-lg > input[type="datetime-local"].input-group-addon, .bs .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
+  .bs input[type="datetime-local"].input-lg,
+  .bs .input-group-lg > input.form-control[type="datetime-local"],
+  .bs .input-group-lg > input.input-group-addon[type="datetime-local"],
+  .bs .input-group-lg > .input-group-btn > input.btn[type="datetime-local"],
   .input-group-lg
   .bs input[type="datetime-local"],
-  .bs input[type="month"].input-lg, .bs .input-group-lg > input[type="month"].form-control, .bs .input-group-lg > input[type="month"].input-group-addon, .bs .input-group-lg > .input-group-btn > input[type="month"].btn,
+  .bs input[type="month"].input-lg,
+  .bs .input-group-lg > input.form-control[type="month"],
+  .bs .input-group-lg > input.input-group-addon[type="month"],
+  .bs .input-group-lg > .input-group-btn > input.btn[type="month"],
   .input-group-lg
   .bs input[type="month"] {
     line-height: 46px;
@@ -34643,12 +34660,18 @@ fieldset[disabled]
   min-height: 34px;
 }
 
-.bs .form-control-static.input-lg, .bs .input-group-lg > .form-control-static.form-control, .bs .input-group-lg > .form-control-static.input-group-addon, .bs .input-group-lg > .input-group-btn > .form-control-static.btn, .bs .form-control-static.input-sm, .bs .input-group-sm > .form-control-static.form-control, .bs .input-group-sm > .form-control-static.input-group-addon, .bs .input-group-sm > .input-group-btn > .form-control-static.btn {
+.bs .form-control-static.input-lg, .bs .input-group-lg > .form-control-static.form-control,
+.bs .input-group-lg > .form-control-static.input-group-addon,
+.bs .input-group-lg > .input-group-btn > .form-control-static.btn, .bs .form-control-static.input-sm, .bs .input-group-sm > .form-control-static.form-control,
+.bs .input-group-sm > .form-control-static.input-group-addon,
+.bs .input-group-sm > .input-group-btn > .form-control-static.btn {
   padding-left: 0;
   padding-right: 0;
 }
 
-.bs .input-sm, .bs .input-group-sm > .form-control, .bs .input-group-sm > .input-group-addon, .bs .input-group-sm > .input-group-btn > .btn {
+.bs .input-sm, .bs .input-group-sm > .form-control,
+.bs .input-group-sm > .input-group-addon,
+.bs .input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -34656,13 +34679,20 @@ fieldset[disabled]
   border-radius: 3px;
 }
 
-.bs select.input-sm, .bs .input-group-sm > select.form-control, .bs .input-group-sm > select.input-group-addon, .bs .input-group-sm > .input-group-btn > select.btn {
+.bs select.input-sm, .bs .input-group-sm > select.form-control,
+.bs .input-group-sm > select.input-group-addon,
+.bs .input-group-sm > .input-group-btn > select.btn {
   height: 30px;
   line-height: 30px;
 }
 
-.bs textarea.input-sm, .bs .input-group-sm > textarea.form-control, .bs .input-group-sm > textarea.input-group-addon, .bs .input-group-sm > .input-group-btn > textarea.btn,
-.bs select[multiple].input-sm, .bs .input-group-sm > select[multiple].form-control, .bs .input-group-sm > select[multiple].input-group-addon, .bs .input-group-sm > .input-group-btn > select[multiple].btn {
+.bs textarea.input-sm, .bs .input-group-sm > textarea.form-control,
+.bs .input-group-sm > textarea.input-group-addon,
+.bs .input-group-sm > .input-group-btn > textarea.btn,
+.bs select[multiple].input-sm,
+.bs .input-group-sm > select.form-control[multiple],
+.bs .input-group-sm > select.input-group-addon[multiple],
+.bs .input-group-sm > .input-group-btn > select.btn[multiple] {
   height: auto;
 }
 
@@ -34692,7 +34722,9 @@ fieldset[disabled]
   line-height: 1.5;
 }
 
-.bs .input-lg, .bs .input-group-lg > .form-control, .bs .input-group-lg > .input-group-addon, .bs .input-group-lg > .input-group-btn > .btn {
+.bs .input-lg, .bs .input-group-lg > .form-control,
+.bs .input-group-lg > .input-group-addon,
+.bs .input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -34700,13 +34732,20 @@ fieldset[disabled]
   border-radius: 6px;
 }
 
-.bs select.input-lg, .bs .input-group-lg > select.form-control, .bs .input-group-lg > select.input-group-addon, .bs .input-group-lg > .input-group-btn > select.btn {
+.bs select.input-lg, .bs .input-group-lg > select.form-control,
+.bs .input-group-lg > select.input-group-addon,
+.bs .input-group-lg > .input-group-btn > select.btn {
   height: 46px;
   line-height: 46px;
 }
 
-.bs textarea.input-lg, .bs .input-group-lg > textarea.form-control, .bs .input-group-lg > textarea.input-group-addon, .bs .input-group-lg > .input-group-btn > textarea.btn,
-.bs select[multiple].input-lg, .bs .input-group-lg > select[multiple].form-control, .bs .input-group-lg > select[multiple].input-group-addon, .bs .input-group-lg > .input-group-btn > select[multiple].btn {
+.bs textarea.input-lg, .bs .input-group-lg > textarea.form-control,
+.bs .input-group-lg > textarea.input-group-addon,
+.bs .input-group-lg > .input-group-btn > textarea.btn,
+.bs select[multiple].input-lg,
+.bs .input-group-lg > select.form-control[multiple],
+.bs .input-group-lg > select.input-group-addon[multiple],
+.bs .input-group-lg > .input-group-btn > select.btn[multiple] {
   height: auto;
 }
 
@@ -35902,13 +35941,17 @@ fieldset[disabled] .bs .btn-link:focus {
   border-radius: 4px;
 }
 
-.bs .input-group-addon.input-sm, .bs .input-group-sm > .input-group-addon, .bs .input-group-sm > .input-group-btn > .input-group-addon.btn {
+.bs .input-group-addon.input-sm,
+.bs .input-group-sm > .input-group-addon,
+.bs .input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
 
-.bs .input-group-addon.input-lg, .bs .input-group-lg > .input-group-addon, .bs .input-group-lg > .input-group-btn > .input-group-addon.btn {
+.bs .input-group-addon.input-lg,
+.bs .input-group-lg > .input-group-addon,
+.bs .input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
@@ -36128,8 +36171,10 @@ fieldset[disabled] .bs .btn-link:focus {
 }
 
 .bs .nav-tabs-justified > .active > a, .bs .nav-tabs.nav-justified > .active > a,
-.bs .nav-tabs-justified > .active > a:hover, .bs .nav-tabs.nav-justified > .active > a:hover,
-.bs .nav-tabs-justified > .active > a:focus, .bs .nav-tabs.nav-justified > .active > a:focus {
+.bs .nav-tabs-justified > .active > a:hover,
+.bs .nav-tabs.nav-justified > .active > a:hover,
+.bs .nav-tabs-justified > .active > a:focus,
+.bs .nav-tabs.nav-justified > .active > a:focus {
   border: 1px solid #ddd;
 }
 
@@ -36139,8 +36184,10 @@ fieldset[disabled] .bs .btn-link:focus {
     border-radius: 4px 4px 0 0;
   }
   .bs .nav-tabs-justified > .active > a, .bs .nav-tabs.nav-justified > .active > a,
-  .bs .nav-tabs-justified > .active > a:hover, .bs .nav-tabs.nav-justified > .active > a:hover,
-  .bs .nav-tabs-justified > .active > a:focus, .bs .nav-tabs.nav-justified > .active > a:focus {
+  .bs .nav-tabs-justified > .active > a:hover,
+  .bs .nav-tabs.nav-justified > .active > a:hover,
+  .bs .nav-tabs-justified > .active > a:focus,
+  .bs .nav-tabs.nav-justified > .active > a:focus {
     border-bottom-color: #fff;
   }
 }
@@ -38655,7 +38702,7 @@ fieldset[disabled] .bs .navbar-inverse .btn-link:focus {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .bs .carousel-control.left {
@@ -38743,7 +38790,7 @@ fieldset[disabled] .bs .navbar-inverse .btn-link:focus {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .bs .carousel-indicators .active {
@@ -39359,8 +39406,7 @@ fieldset[disabled] .bs .btn-danger.active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
-.bs .dropdown-menu > li > a:hover,
-.bs .dropdown-menu > li > a:focus {
+.bs .dropdown-menu > li > a:hover, .bs .dropdown-menu > li > a:focus {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));
   background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
   background-repeat: repeat-x;
@@ -39368,9 +39414,7 @@ fieldset[disabled] .bs .btn-danger.active {
   background-color: #e8e8e8;
 }
 
-.bs .dropdown-menu > .active > a,
-.bs .dropdown-menu > .active > a:hover,
-.bs .dropdown-menu > .active > a:focus {
+.bs .dropdown-menu > .active > a, .bs .dropdown-menu > .active > a:hover, .bs .dropdown-menu > .active > a:focus {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2e6da4));
   background-image: linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);
   background-repeat: repeat-x;
@@ -39534,9 +39578,7 @@ fieldset[disabled] .bs .btn-danger.active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
-.bs .list-group-item.active,
-.bs .list-group-item.active:hover,
-.bs .list-group-item.active:focus {
+.bs .list-group-item.active, .bs .list-group-item.active:hover, .bs .list-group-item.active:focus {
   text-shadow: 0 -1px 0 #286090;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2b669a));
   background-image: linear-gradient(to bottom, #337ab7 0%, #2b669a 100%);
@@ -39624,48 +39666,20 @@ body {
   background: #EEE;
 }
 
-@font-face {
-  font-family: "Hosted Noto Sans Regular";
-  src: url("../assets/res/fonts/NotoSans-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Hosted Noto Sans Black";
-  src: url("../assets/res/fonts/NotoSans-Black.ttf");
-}
-
-@font-face {
-  font-family: "Hosted Source Han Sans Normal";
-  src: url("../assets/res/fonts/SourceHanSans-Normal.ttc");
-}
-
-@font-face {
-  font-family: "Hosted Source Han Sans Regular";
-  src: url("../assets/res/fonts/SourceHanSans-Regular.ttc");
-}
-
-@font-face {
-  font-family: "Hosted Source Han Sans SC Regular";
-  src: url("../assets/res/fonts/SourceHanSansSC-Regular.otf");
-}
-
 .item {
   min-height: 3rem;
   /* <- this can be whatever you need */
 }
 
 .hsy-listing-item-header {
-  font-family: "Hosted Noto Sans Regular";
   font-size: 16px;
 }
 
 .hsy-listing-item-price {
-  font-family: "Hosted Noto Sans Regular";
   font-size: 16px;
 }
 
 .hsy-listing-item-last-updated {
-  font-family: "Hosted Noto Sans Regular";
   font-size: 14px;
 }
 
@@ -39859,8 +39873,8 @@ listing-ux-detail .detail-header {
 listing-ux-detail .detail-header-shadow {
   width: 100%;
   height: 60px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(transparent));
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
   position: absolute;
   display: block;
   z-index: 10;
@@ -39890,7 +39904,6 @@ listing-ux-detail .detail-content-map {
 listing-ux-detail h1 {
   width: 100%;
   color: #4D4D4D;
-  font-family: Avenir;
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
@@ -39900,7 +39913,6 @@ listing-ux-detail .subtitle {
   display: inline;
   padding-right: 16px;
   color: #A5A5A5;
-  font-family: "PingFang SC";
   font-size: 12px;
   line-height: 16px;
 }
@@ -39916,7 +39928,6 @@ listing-ux-detail .detail-map-title-block {
 
 listing-ux-detail .detail-map-title {
   color: #4D4D4D;
-  font-family: Avenir;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
@@ -39926,7 +39937,6 @@ listing-ux-detail .detail-map-title {
 
 listing-ux-detail .detail-map-subtitle {
   color: #A5A5A5;
-  font-family: "PingFang SC";
   font-size: 12px;
   line-height: 16px;
   display: inline-block;
@@ -39951,7 +39961,6 @@ listing-ux-detail .section {
 listing-ux-detail .section .section-title {
   height: 32px;
   color: #4D4D4D;
-  font-family: "PingFang SC";
   font-size: 24px;
   line-height: 32px;
 }
@@ -39993,7 +40002,6 @@ listing-ux-detail .footer .footer-block {
 
 listing-ux-detail .content {
   color: #4D4D4D;
-  font-family: Avenir;
   font-size: 16px;
   line-height: 24px;
 }
@@ -40001,7 +40009,6 @@ listing-ux-detail .content {
 listing-ux-detail .section-more {
   text-align: right;
   color: #00B6F7;
-  font-family: "PingFang SC";
   font-size: 16px;
   line-height: 24px;
 }
@@ -40056,7 +40063,6 @@ listing-ux-detail #price-button {
 listing-ux-detail #contact-button {
   color: white;
   background-color: #0FAFFF;
-  font-family: "PingFang SC";
   font-size: 16px;
   font-weight: 500;
 }
@@ -40110,14 +40116,12 @@ listing-ux-item > .wrapper > .grid-container > .content > .title {
   /* fallback */
   font-size: 1em;
   color: #4D4D4D;
-  font-family: "Hosted Noto Sans Regular";
   margin-bottom: 0.5em;
   word-wrap: break-word;
 }
 
 listing-ux-item > .wrapper > .grid-container > .content > .middle {
   color: #6C6C6C;
-  font-family: "Hosted Noto Sans Regular";
   line-height: 0.75em;
   margin-bottom: 0.25em;
 }
@@ -40175,6 +40179,20 @@ listing-ux-tab .filter-icon {
   font-size: 16px;
   height: 16px;
   width: 16px;
+}
+
+ux-primary-creation .section {
+  margin: 20px;
+}
+
+ux-primary-creation .section-header {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+ux-primary-creation .content-input {
+  width: 100%;
+  max-height: 500px;
 }
 
 qrcode-tab .curtain-page .mkt-logo-wrap {
